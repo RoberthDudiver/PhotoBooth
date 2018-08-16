@@ -1,0 +1,17 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:my1="clr-namespace:FluidKit.Controls;assembly=FluidKit"
+            xmlns:local="clr-namespace:TakeAPicture.Controles" x:Class="TakeAPicture.Controles.EfectosDeFotos" Loaded="UserControl_Loaded_1"
+            >
+    <Grid>
+        <local:IraHomeIralAnterior soloclick="True" Margin="1783,22,0,0" x:Name="iraHomeIralAnterior1" MostrarBotonAnterior="True" Height="149" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300" AnteriroClick="iraHomeIralAnterior1_AnteriroClick" MostrarBotonFace="False" MostrarBotonHouse="False" FaceClick="iraHomeIralAnterior1_FaceClick"/>
+        <Image   x:Name="Imagen" VerticalAlignment="Top" />
+
+        <local:Galeria x:Name="galeria" HorizontalAlignment="Left" CambiodeSeleccion="galeria_CambiodeSeleccion"     />
+
+
+    </Grid>
+</UserControl>

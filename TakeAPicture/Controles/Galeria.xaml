@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="TakeAPicture.Controles.Galeria"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+          xmlns:Samples="clr-namespace:TakeAPicture"
+               xmlns:sys="clr-namespace:System;assembly=mscorlib"
+          xmlns:my="clr-namespace:FluidKit.Controls;assembly=FluidKit"
+              
+             >
+    <UserControl.Resources>
+        <Samples:StringCollection x:Key="DataSource" />
+        <LinearGradientBrush x:Key="ReflectionBrush"
+                             StartPoint="0,0"
+                             EndPoint="0,1">
+            <GradientStop Offset="0"
+                          Color="#7F000000" />
+            <GradientStop Offset=".5"
+                          Color="Transparent" />
+        </LinearGradientBrush>
+
+        <DataTemplate x:Key="TestDataTemplate"
+                      DataType="{x:Type sys:String}">
+            <Border x:Name="ElementVisual"
+                    Background="White"
+                    Padding="5"
+                    BorderThickness="5"
+                    BorderBrush="LightGray"
+                    Grid.Row="0">
+                <Image Source="{Binding}"
+                       Stretch="Fill" />
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="TestDataTemplate_Reflection">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.5*" />
+                </Grid.RowDefinitions>
+
+                <Border x:Name="ElementVisual"
+                        BorderThickness="2"
+                        BorderBrush="LightYellow"
+                        Background="Black"
+                        Padding="2">
+                    <Image Source="{Binding}"
+                           Stretch="Fill" />
+                </Border>
+                <Rectangle OpacityMask="{StaticResource ReflectionBrush}"
+                           Grid.Row="1"
+                           Height="{Binding ActualHeight, ElementName=ElementVisual}">
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{Binding ElementName=ElementVisual}">
+                            <VisualBrush.RelativeTransform>
+                                <ScaleTransform ScaleX="1"
+                                                ScaleY="-1"
+                                                CenterX="0.5"
+                                                CenterY="0.5" />
+                            </VisualBrush.RelativeTransform>
+                        </VisualBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="ItemTemplate">
+            <Border BorderBrush="#FFB1B1B1"
+                    BorderThickness="2"
+                    Background="#7FFFFFFF"
+                    Padding="0,20,0,0"
+                    CornerRadius="3">
+                <Image Source="{Binding Image}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Stretch="Fill" />
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <my:ElementFlow Background="Transparent" x:Name="_elementFlow"
+                              Grid.Row="0"
+                              Grid.Column="0"
+                              Grid.ColumnSpan="1"
+                       
+                              ItemsSource="{DynamicResource DataSource}"
+                              ItemTemplate="{DynamicResource TestDataTemplate}"
+                              TiltAngle="60"
+                              ItemGap="1.5"
+                              FrontItemGap="0"
+                              PopoutDistance="0"
+                              ElementWidth="300"
+                              ElementHeight="200" MouseLeave="_elementFlow_MouseLeave">
+            <my:ElementFlow.Layout>
+                <my:CoverFlow />
+            </my:ElementFlow.Layout>
+                 <my:ElementFlow.Camera>
+                <PerspectiveCamera FieldOfView="70"
+                                   Position="0,3,6"
+                                   LookDirection="0,-3,-6" />
+            </my:ElementFlow.Camera>
+        </my:ElementFlow>
+    </Grid>
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:webcam="clr-namespace:WpfCamera;assembly=WpfCamera"
+        xmlns:WpfPageTransitions="clr-namespace:WpfPageTransitions;assembly=WpfPageTransitions" xmlns:Controles="clr-namespace:TakeAPicture.Controles" x:Class="TakeAPicture.MainWindow"
+        Title="MainWindow"  Height="1080" Width="1920" WindowStyle="None"  WindowState="Maximized"  Loaded="Window_Loaded_1">
+    <Window.Background>
+        <ImageBrush  x:Name="WindowBackground" Opacity="0.6"/>
+    </Window.Background>
+    <Grid >
+        <WpfPageTransitions:PageTransition  Name="pageTransitionControl" Loaded="pageTransitionControl_Loaded" >
+        </WpfPageTransitions:PageTransition>
+        
+
+
+    </Grid>
+</Window>
