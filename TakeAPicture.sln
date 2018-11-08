@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TakeAPicture", "TakeAPicture\TakeAPicture.csproj", "{8898A794-6FD9-4EA9-8251-75E3A2E2CAAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCamera", "WpfCamera\WpfCamera.csproj", "{72B5D26D-0132-4809-A3CE-9500CAB45BD6}"
@@ -12,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfectosConfig", "EfectosConfig\EfectosConfig.csproj", "{A5C8D4FC-C437-411A-848E-E4F46E95B9A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RADMLIB", "RADMLIB\RADMLIB.csproj", "{86447038-2915-41C8-B4DA-31A277B37E86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitterpost", "Twitterpost\Twitterpost\Twitterpost.csproj", "{48D02475-B403-4C05-98D0-36365F8A9D46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,8 +47,15 @@ Global
 		{86447038-2915-41C8-B4DA-31A277B37E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86447038-2915-41C8-B4DA-31A277B37E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86447038-2915-41C8-B4DA-31A277B37E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48D02475-B403-4C05-98D0-36365F8A9D46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D02475-B403-4C05-98D0-36365F8A9D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D02475-B403-4C05-98D0-36365F8A9D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D02475-B403-4C05-98D0-36365F8A9D46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98444586-161E-4F80-A60E-ADD2CE5B86E2}
 	EndGlobalSection
 EndGlobal
